@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - docker build -t demoecsrepo .
-	  - docker tag demoecsrepo:latest 533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+      - docker tag demoecsrepo:latest 533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
 
   post_build:
     commands:
