@@ -15,3 +15,6 @@ phases:
   post_build:
     commands:
       - docker push 533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+artifacts:
+  files:
+    - imagedefinitions.json
