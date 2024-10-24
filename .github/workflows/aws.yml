@@ -66,8 +66,8 @@ jobs:
       
     - name: Download task definition
       run: |
-          aws ecs describe-task-definition --task-definition ${{ env.MY_ECS_TASK_DEFINITION }} \
-          --query taskDefinition > task-definition.json
+          aws ecs describe-task-definition --task-definition ${{ env.MY_ECS_TASK_DEFINITION }}  --query taskDefinition > task-definition.json
+         
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
