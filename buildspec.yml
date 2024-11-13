@@ -14,7 +14,7 @@ phases:
 
   post_build:
     commands:
-      - docker push 423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+      - docker push 423623870903.dkr.ecr.us-east-1.amazonaws.com/testecr:latest
       - echo Writing image definitions file...
       - printf '[{"name":"demo-container","imageUri":"423623870903.dkr.ecr.us-east-1.amazonaws.com/testecr:latest"}]' > imagedefinitions.json
 artifacts:
