@@ -9,14 +9,14 @@ phases:
        
   build:
     commands:
-      - docker build -t demoecsrepo .
-      - docker tag demoecsrepo:latest 423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+      - docker build -t testecr .
+      - docker tag testecr:latest 423623870903.dkr.ecr.us-east-1.amazonaws.com/testecr:latest
 
   post_build:
     commands:
       - docker push 423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"demo-container","imageUri":"423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"demo-container","imageUri":"423623870903.dkr.ecr.us-east-1.amazonaws.com/testecr:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
