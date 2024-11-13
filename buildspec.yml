@@ -4,19 +4,19 @@ phases:
   install:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267123805.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 423623870903.dkr.ecr.us-east-1.amazonaws.com
     
        
   build:
     commands:
       - docker build -t demoecsrepo .
-      - docker tag demoecsrepo:latest 533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+      - docker tag demoecsrepo:latest 423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
 
   post_build:
     commands:
-      - docker push 533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
+      - docker push 423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"demo-container","imageUri":"533267123805.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"demo-container","imageUri":"423623870903.dkr.ecr.us-east-1.amazonaws.com/demoecsrepo:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
