@@ -8,7 +8,7 @@ const HOST = '0.0.0.0';
  // App
  const app = express();
  app.get('/', (req, res) => {
-   res.send(`<h1>Welcome to RAMANA AS A PM</h1>
+   res.send(`<h1>Welcome to RAMANA triabz AS A PM</h1>
             <img src="cv.png" alt="Sample Image" width="500"/>
     `);
    });
